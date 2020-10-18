@@ -1,0 +1,12 @@
++--------+-----------+---------------------------------------+-------------------------------+----------------------------------------------------------------+--------------+
+| Domain | Method    | URI                                   | Name                          | Action                                                         | Middleware   |
++--------+-----------+---------------------------------------+-------------------------------+----------------------------------------------------------------+--------------+
+|        | GET|HEAD  | /                                     |                               | Closure                                                        | web          |
+|        | GET|HEAD  | admin/shop/categories                 | shop.admin.categories.index   | App\Http\Controllers\Shop\Admin\ShopCategoryController@index   | web          |
+|        | POST      | admin/shop/categories                 | shop.admin.categories.store   | App\Http\Controllers\Shop\Admin\ShopCategoryController@store   | web          |
+|        | GET|HEAD  | admin/shop/categories/create          | shop.admin.categories.create  | App\Http\Controllers\Shop\Admin\ShopCategoryController@create  | web          |
+|        | PUT|PATCH | admin/shop/categories/{category}      | shop.admin.categories.update  | App\Http\Controllers\Shop\Admin\ShopCategoryController@update  | web          |
+|        | DELETE    | admin/shop/categories/{category}      | shop.admin.categories.destroy | App\Http\Controllers\Shop\Admin\ShopCategoryController@destroy | web          |
+|        | GET|HEAD  | admin/shop/categories/{category}/edit | shop.admin.categories.edit    | App\Http\Controllers\Shop\Admin\ShopCategoryController@edit    | web          |
+|        | GET|HEAD  | api/user                              |                               | Closure                                                        | api,auth:api |
++--------+-----------+---------------------------------------+-------------------------------+----------------------------------------------------------------+--------------+
