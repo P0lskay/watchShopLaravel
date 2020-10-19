@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Shop\Admin;
 
 use Illuminate\Http\Request;
+use App\Repositories\ShopCategoryRepository;
+use App\Models\ShopCategory;
 
 class ShopCategoryController extends BaseController
 {
@@ -11,9 +13,20 @@ class ShopCategoryController extends BaseController
      *
      * @return \Illuminate\Http\Response
      */
+
+    private $shopCategoryRepository;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->shopCategoryRepository = app(ShopCategoryRepository::class);
+    }
+
     public function index()
     {
-        //
+        $paginator =
+            $this->shopCategoryRepository->getAllWithPaginate(5);
+        return view('shop.admin.category.index', compact('paginator'));
     }
 
     /**
