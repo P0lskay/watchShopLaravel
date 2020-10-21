@@ -29,3 +29,7 @@ Route::group($groupData, function () {
         ->only($methods)
         ->names('shop.admin.categories');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
