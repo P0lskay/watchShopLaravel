@@ -17,7 +17,7 @@ class ShopCategoryRepository extends CoreRepository
         return $this->startCondition()->find($id);
     }
 
-    public function getComboBox()
+    public function getForComboBox()
     {
         $columns = implode(', ',[
             'id',
