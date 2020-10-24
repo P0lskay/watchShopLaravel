@@ -19,9 +19,9 @@ class ShopCategoryRepository extends CoreRepository
 
     public function getForComboBox()
     {
-        $columns = implode(', ',[
+        $columns = implode(', ', [
             'id',
-            'CONCAT (id, ". ", title) AS id_title'
+            'CONCAT (id, ". ", title) AS id_title',
         ]);
         
         $result[] = $this
@@ -29,6 +29,7 @@ class ShopCategoryRepository extends CoreRepository
             ->selectRaw($columns)
             ->toBase()
             ->get();
+        return $result;
     }
 
     public function getAllWithPaginate($perPage = null)

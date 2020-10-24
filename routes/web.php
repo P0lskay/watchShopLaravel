@@ -28,6 +28,9 @@ Route::group($groupData, function () {
     Route::resource('categories', 'ShopCategoryController')
         ->only($methods)
         ->names('shop.admin.categories');
+    Route::resource('watches', 'WatchController')
+        ->except(['show'])
+        ->names('shop.admin.watches');
 });
 
 Auth::routes();

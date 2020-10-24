@@ -25,11 +25,13 @@
                         <div class="form-group">
                             <label for="parent_id">Родитель</label>
                             <select name="parent_id" id="parent_id" class="form-control" placeholder="Выберите категорию" required>
-                                @foreach($categoryList as $categoryOption)
+                                @foreach($categoryList as $it)
+                                @foreach($it as $categoryOption)
                                 <option value="{{$categoryOption->id}}" @if($categoryOption->id == $item->parent_id) selected @endif>
                                     {{--{{$categoryOption->id}}. {{$categoryOption->title}}--}}
                                     {{$categoryOption->id_title}}
                                 </option>
+                                @endforeach
                                 @endforeach
                             </select>
                         </div>

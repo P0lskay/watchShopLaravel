@@ -1,43 +1,43 @@
 @extends('layouts.app')
 
 @section('content')
-    @php
-        /**@var \App\Models\ShopCategory $item */
-    @endphp
-    @if($item->exists)
-        <form method="POST" action="{{route('shop.admin.categories.update', $item->id)}}">
-        @method('PATCH')
+@php
+/**@var \App\Models\ShopCategory $item */
+@endphp
+@if($item->exists)
+<form method="POST" action="{{route('shop.admin.categories.update', $item->id)}}">
+    @method('PATCH')
     @else
-        <form method="POST" action="{{route('shop.admin.categories.store')}}">
-    @endif
-        @csrf 
+    <form method="POST" action="{{route('shop.admin.categories.store')}}">
+        @endif
+        @csrf
         <div class="container">
-            @php 
+            @php
             /**@var \Illuminate\Support\ViewErrorBag $errors */
-            @endphp 
+            @endphp
             @if($errors->any())
-                <div class="row justify-content-center">
-                    <div class="col-md-11">
-                        <div class="alert alert-danger" role="alert">
-                            <button class="close" type="button" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">x</span>
-                            </button>
-                            {{$errors->first()}}
-                        </div>
+            <div class="row justify-content-center">
+                <div class="col-md-11">
+                    <div class="alert alert-danger" role="alert">
+                        <button class="close" type="button" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">x</span>
+                        </button>
+                        {{$errors->first()}}
                     </div>
                 </div>
+            </div>
             @endif
             @if(session('success'))
             <div class="row justify-content-center">
-                    <div class="col-md-11">
-                        <div class="alert alert-success" role="alert">
-                            <button class="close" type="button" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">x</span>
-                            </button>
-                            {{session()->get('success')}}
-                        </div>
+                <div class="col-md-11">
+                    <div class="alert alert-success" role="alert">
+                        <button class="close" type="button" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">x</span>
+                        </button>
+                        {{session()->get('success')}}
                     </div>
                 </div>
+            </div>
             @endif
             <div class="row justify-content-center">
                 <div class="col-md-8">
@@ -49,4 +49,4 @@
             </div>
         </div>
     </form>
-@endsection
+    @endsection

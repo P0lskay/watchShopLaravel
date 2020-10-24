@@ -1,12 +1,30 @@
-+--------+-----------+---------------------------------------+-------------------------------+----------------------------------------------------------------+--------------+
-| Domain | Method    | URI                                   | Name                          | Action                                                         | Middleware   |
-+--------+-----------+---------------------------------------+-------------------------------+----------------------------------------------------------------+--------------+
-|        | GET|HEAD  | /                                     |                               | Closure                                                        | web          |
-|        | GET|HEAD  | admin/shop/categories                 | shop.admin.categories.index   | App\Http\Controllers\Shop\Admin\ShopCategoryController@index   | web          |
-|        | POST      | admin/shop/categories                 | shop.admin.categories.store   | App\Http\Controllers\Shop\Admin\ShopCategoryController@store   | web          |
-|        | GET|HEAD  | admin/shop/categories/create          | shop.admin.categories.create  | App\Http\Controllers\Shop\Admin\ShopCategoryController@create  | web          |
-|        | PUT|PATCH | admin/shop/categories/{category}      | shop.admin.categories.update  | App\Http\Controllers\Shop\Admin\ShopCategoryController@update  | web          |
-|        | DELETE    | admin/shop/categories/{category}      | shop.admin.categories.destroy | App\Http\Controllers\Shop\Admin\ShopCategoryController@destroy | web          |
-|        | GET|HEAD  | admin/shop/categories/{category}/edit | shop.admin.categories.edit    | App\Http\Controllers\Shop\Admin\ShopCategoryController@edit    | web          |
-|        | GET|HEAD  | api/user                              |                               | Closure                                                        | api,auth:api |
-+--------+-----------+---------------------------------------+-------------------------------+----------------------------------------------------------------+--------------+
++--------+-----------+---------------------------------------+-------------------------------+------------------------------------------------------------------------+--------------+
+| Domain | Method    | URI                                   | Name                          | Action                                                                 | Middleware   |
++--------+-----------+---------------------------------------+-------------------------------+------------------------------------------------------------------------+--------------+
+|        | GET|HEAD  | /                                     |                               | Closure                                                                | web          |
+|        | GET|HEAD  | admin/shop/categories                 | shop.admin.categories.index   | App\Http\Controllers\Shop\Admin\ShopCategoryController@index           | web          |
+|        | POST      | admin/shop/categories                 | shop.admin.categories.store   | App\Http\Controllers\Shop\Admin\ShopCategoryController@store           | web          |
+|        | GET|HEAD  | admin/shop/categories/create          | shop.admin.categories.create  | App\Http\Controllers\Shop\Admin\ShopCategoryController@create          | web          |
+|        | PUT|PATCH | admin/shop/categories/{category}      | shop.admin.categories.update  | App\Http\Controllers\Shop\Admin\ShopCategoryController@update          | web          |
+|        | DELETE    | admin/shop/categories/{category}      | shop.admin.categories.destroy | App\Http\Controllers\Shop\Admin\ShopCategoryController@destroy         | web          |
+|        | GET|HEAD  | admin/shop/categories/{category}/edit | shop.admin.categories.edit    | App\Http\Controllers\Shop\Admin\ShopCategoryController@edit            | web          |
+|        | GET|HEAD  | admin/shop/watches                    | shop.admin.watches.index      | App\Http\Controllers\Shop\Admin\WatchController@index                  | web          |
+|        | POST      | admin/shop/watches                    | shop.admin.watches.store      | App\Http\Controllers\Shop\Admin\WatchController@store                  | web          |
+|        | GET|HEAD  | admin/shop/watches/create             | shop.admin.watches.create     | App\Http\Controllers\Shop\Admin\WatchController@create                 | web          |
+|        | DELETE    | admin/shop/watches/{watch}            | shop.admin.watches.destroy    | App\Http\Controllers\Shop\Admin\WatchController@destroy                | web          |
+|        | PUT|PATCH | admin/shop/watches/{watch}            | shop.admin.watches.update     | App\Http\Controllers\Shop\Admin\WatchController@update                 | web          |
+|        | GET|HEAD  | admin/shop/watches/{watch}/edit       | shop.admin.watches.edit       | App\Http\Controllers\Shop\Admin\WatchController@edit                   | web          |
+|        | GET|HEAD  | api/user                              |                               | Closure                                                                | api,auth:api |
+|        | GET|HEAD  | home                                  | home                          | App\Http\Controllers\HomeController@index                              | web,auth     |
+|        | GET|HEAD  | login                                 | login                         | App\Http\Controllers\Auth\LoginController@showLoginForm                | web,guest    |
+|        | POST      | login                                 |                               | App\Http\Controllers\Auth\LoginController@login                        | web,guest    |
+|        | POST      | logout                                | logout                        | App\Http\Controllers\Auth\LoginController@logout                       | web          |
+|        | GET|HEAD  | password/confirm                      | password.confirm              | App\Http\Controllers\Auth\ConfirmPasswordController@showConfirmForm    | web,auth     |
+|        | POST      | password/confirm                      |                               | App\Http\Controllers\Auth\ConfirmPasswordController@confirm            | web,auth     |
+|        | POST      | password/email                        | password.email                | App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail  | web          |
+|        | GET|HEAD  | password/reset                        | password.request              | App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm | web          |
+|        | POST      | password/reset                        | password.update               | App\Http\Controllers\Auth\ResetPasswordController@reset                | web          |
+|        | GET|HEAD  | password/reset/{token}                | password.reset                | App\Http\Controllers\Auth\ResetPasswordController@showResetForm        | web          |
+|        | GET|HEAD  | register                              | register                      | App\Http\Controllers\Auth\RegisterController@showRegistrationForm      | web,guest    |
+|        | POST      | register                              |                               | App\Http\Controllers\Auth\RegisterController@register                  | web,guest    |
++--------+-----------+---------------------------------------+-------------------------------+------------------------------------------------------------------------+--------------+
