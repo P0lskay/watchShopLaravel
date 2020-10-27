@@ -33,6 +33,6 @@ Route::group($groupData, function () {
 //User shop
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/', 'Shop\Custom\ShopWatchController@index');
+Route::get('/show/{id}', 'Shop\Custom\ShopWatchController@show');
