@@ -11,6 +11,11 @@ class ShopWatchRepository extends CoreRepository
         return Model::class;
     }
 
+    public function getShow($id)
+    {
+        return $this->startCondition()->find($id);
+    }
+
     public function getAllWithPaginate()
     {
         $columns = [

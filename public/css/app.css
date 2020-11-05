@@ -10905,3 +10905,19 @@ a.text-dark:focus {
 
 /*ДОБВЛЕННОЕ ВРУЧНУЮ*/ 
 
+.product {
+  background-color: #fff;
+  margin-bottom: 25px;
+}
+
+.product > h6.product_category{
+  position: absolute;
+  left: 280px;
+  color: #27271f;
+}
+
+.product_category, .product_title, .product_producer{
+  padding: 5px 10px;
+  text-align: right;
+  color: #27271f;
+}

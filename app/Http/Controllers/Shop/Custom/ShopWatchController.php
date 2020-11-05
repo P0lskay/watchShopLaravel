@@ -34,6 +34,7 @@ class ShopWatchController extends BaseController
      */
     public function show($id)
     {
-    
+        $watch = $this->shopWatchRepository->getShow($id);
+        return view('shop.custom.showProduct.index', compact($watch, 'watch'));
     }
 }
